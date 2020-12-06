@@ -1,0 +1,79 @@
+.UserSetting {
+    padding: 90px 30px;
+    background-color: rgb(248, 245, 245);
+}
+
+.Contianer {
+    display: flex;
+    margin-top: 20px;
+}
+
+.Sidebar {
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+}
+
+.Info {
+    padding: 10px 30px;
+    width: 70%;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.List {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: rgb(133, 132, 132);
+    padding: 5px 15px;
+    margin: 10px 0;
+    
+}
+
+.Selected {
+    color: #000;
+    border-right: 2px solid #000;
+}
+
+.List span {
+    font-size: 25px;
+    margin-left: 8px;
+}
+
+.List ion-icon {
+    font-size: 22px;
+}
+
+
+@media screen and (max-width: 700px) {
+
+    .Sidebar {
+        display: none;
+    }
+
+    .Info {
+        flex: 1;
+        margin: 0 auto;
+    }
+}
+
+@media screen and (max-width: 600px) {
+
+    .UserSetting {
+        padding: 90px 20px;
+    }
+}
+
+@media screen and (max-width: 500px) {
+
+    .UserSetting {
+        padding: 90px 0;
+    }
+
+    .Info {
+        padding: 10px 20px;
+    }
+}

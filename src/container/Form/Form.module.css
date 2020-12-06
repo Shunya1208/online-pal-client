@@ -1,0 +1,80 @@
+.Form {
+    width: 40%;
+    padding: 20px 70px;
+    border-radius: 20px;
+    background-color: #fff;
+    margin: 80px auto;
+    box-shadow: 0 1px 1px rgb(104, 103, 103);
+    box-sizing: border-box;
+}
+
+.ChangeForm {
+    width: 90%;
+    margin: 40px auto;
+
+}
+
+.Form h4 {
+    text-transform: uppercase;
+    display: inline-block;
+    font-size: 20px;
+    background: linear-gradient(to right , rgb(142, 142, 224),  rgb(74, 74, 236));
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+.ForgotPassword {
+    display: inline-block;
+    text-decoration: none;
+    color: grey;
+    margin-bottom: 20px;
+}
+
+.Sentence {
+    font-size: 19px;
+    margin-bottom: 50px;
+}
+
+@media screen and (max-width: 1100px) {
+
+    .Form {
+        width: 50%;
+    }
+
+    .ChangeForm {
+        width: 90%;
+    }
+}
+
+@media screen and (max-width: 860px) {
+
+    .Form {
+        width: 70%;
+        padding-right: 50px;
+        padding-left: 50px;
+    }
+
+    .ChangeForm {
+        width: 90%;
+    }
+}
+
+@media screen and (max-width: 600px) {
+
+    .Form {
+        width: 90%;
+    }
+}
+
+@media screen and (max-width: 500px) {
+
+    .Form {
+        width: 100%;
+        padding-right: 25px;
+        padding-left: 25px;
+    }
+
+    .Form h4 {
+        font-size: 15px;
+    }
+}

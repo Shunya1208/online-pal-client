@@ -1,0 +1,35 @@
+.LocationInfo{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%x;
+    transition: all .3s;
+    text-decoration: none;
+    color: #000;
+}
+
+.LocationInfo:hover {
+    transform: translateY(-4px);
+    background-color: #fff;
+}
+
+.LocationInfo img{
+    width: 100%;
+    height: auto;
+}
+
+.Name {
+    font-size: 20px;
+    margin: 5px 0;
+}
+
+.DistanceBox {
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+}
+
+.LocationInfo ion-icon {
+    color: rgb(74, 74, 236);
+    margin-right: 3px;
+}

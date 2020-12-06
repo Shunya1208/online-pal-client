@@ -1,0 +1,81 @@
+.Container {
+    display: grid;
+    grid-template-columns: 1fr repeat(8, minmax(min-content, 140px) ) 1fr;
+}
+
+.Header {
+    grid-column: 1 / -1;
+    grid-row: 1 / 2;
+    height: 90vh;
+    background-size: cover;
+    background-image: linear-gradient(rgba(102, 102, 102, 0.507),rgba(102, 102, 102, 0.507)),
+    url(../../assets/images/hero.jpg);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.Header h1 {
+    display: inline-block;
+    background-color: rgba(74, 74, 236,.7);
+    color: white;
+    padding: 10px 25px;
+    border-radius: 15px;
+    font-size: 55px;
+    font-style: italic;
+    font-weight: 300;
+    text-align: center;
+}
+
+.QuickSearch {
+    grid-column: 2 / 10;
+    padding: 50px 30px;
+}
+
+.LocationSearch {
+    grid-column: 1/ -1;
+    padding: 50px 30px;
+    background-color: rgb(243, 240, 240);
+}
+
+.languageSearch {
+    grid-column: 2 / 10;
+    padding: 50px 30px;
+}
+
+.ButtonBox {
+    margin-top: 20px;
+}
+
+@media screen and (max-width: 650px) {
+
+    .Header h1 {
+        font-size: 45px;
+    }
+}
+
+@media screen and (max-width: 500px) {
+
+    .Header h1 {
+        font-size: 33px;
+    }
+}
+
+@media screen and (max-width: 400px) {
+
+    .QuickSearch {
+        padding-left: 0;
+        padding-right: 0;
+    }
+    
+    .LocationSearch {
+        padding-left: 0;
+        padding-right: 0;
+    }
+    
+    .languageSearch {
+        padding-left: 0;
+        padding-right: 0;
+    }
+}

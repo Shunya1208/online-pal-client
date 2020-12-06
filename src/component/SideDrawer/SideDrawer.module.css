@@ -1,0 +1,83 @@
+.SideDrawer {
+    display: none;
+    position: fixed;
+    width: 280px;
+    max-width: 70%;
+    height: 100%;
+    right: 0;
+    top: 0;
+    z-index: 600;
+    background-color: rgb(74, 74, 236);
+    padding:15px;
+    box-sizing: border-box;
+    transition: transform .3s ease-out;
+}
+
+.TitleBox {
+    width: 100%;
+    margin: 0 auto;
+    padding-bottom: 5px;
+    border-bottom: 2px solid #fff;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 15vh;
+}
+
+.User {
+    justify-content: space-between;
+}
+
+.SideList {
+    list-style: none;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    padding: 0 5px;
+}
+
+.List {
+    display: flex;
+    align-items: center;
+    color: #fff;
+    text-decoration: none;
+    padding: 15px 10px;
+    font-size: 28px;
+}
+
+.List span {
+    margin-left: 5px;
+}
+
+.Logout {
+    color: #fff;
+    font-size: 28px;
+    padding: 15px 10px;
+    text-transform: uppercase;
+}
+
+@media (max-width: 700px) {
+    .SideDrawer {
+        display: block;
+    }
+
+    .Open {
+        transform: translateX(0);
+    }
+    
+    .Close {
+        transform: translateX(100%);
+    }
+}
+
+@media (max-width: 400px) {
+    .Logout {
+        font-size: 23px;
+    }
+
+    .List {
+        font-size: 23px;
+    }
+}
+

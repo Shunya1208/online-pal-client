@@ -1,0 +1,9 @@
+.FormBox {
+    width: 80%;
+}
+
+@media (max-width: 1000px) {
+    .FormBox {
+        width: 100%;
+    }
+}

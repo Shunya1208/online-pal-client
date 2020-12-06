@@ -1,0 +1,42 @@
+.Toolbar {
+    height: 70px;
+    width: 100%;
+    background-color: rgb(74, 74, 236);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 400;
+    border-bottom: 1px solid rgb(88, 88, 88);
+}
+
+.Container {
+    height: 100%;
+    margin-right: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.BtnBox{
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.userBox {
+    height: 80%;
+}
+
+@media screen and (max-width: 700px) {
+
+    .BtnBox{
+        display: none;
+    }
+
+    .userBox{
+        display: none;
+    }
+}
+

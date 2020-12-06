@@ -1,0 +1,17 @@
+.Bookmark {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-gap: 10px;
+}
+
+.Spinner {
+    grid-column: 1 / -1;
+    justify-self: center;
+}
+
+.Comment {
+    grid-column: 1 / -1;
+    justify-self: center;
+    font-size: 25px;
+}

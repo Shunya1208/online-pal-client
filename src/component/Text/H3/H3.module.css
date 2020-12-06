@@ -1,0 +1,18 @@
+.Sub {
+    text-transform: uppercase;
+    display: inline-block;
+    font-size: 25px;
+    background: linear-gradient(to right , rgb(142, 142, 224),  rgb(74, 74, 236));
+    -webkit-background-clip: text;
+    color: transparent;
+    margin: 25px auto;
+}
+
+@media screen and (max-width: 500px) {
+
+    .Sub {
+        font-size: 17px;
+        margin: 10px auto;
+
+    }
+}

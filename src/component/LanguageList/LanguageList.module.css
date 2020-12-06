@@ -1,0 +1,14 @@
+.LanguageList {
+    list-style: none;
+    display: inline-block;
+    padding: 0;
+    margin: 5px 0;
+}
+
+.LanguageList li {
+    display: inline-block;
+    border: 1px solid grey;
+    padding: 5px 7px;
+    border-radius: 5px;
+    margin: 5px;
+}

@@ -1,0 +1,18 @@
+.Logo {
+    padding: 8px;
+    margin: auto 10px;
+    height: 100%;
+    box-sizing: border-box;
+    cursor: pointer;
+}
+
+.Logo img {
+    height: 100%;
+}
+
+@media screen and (max-width: 700px) {
+
+    .Logo {
+        height: 90%;
+    }
+}

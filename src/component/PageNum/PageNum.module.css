@@ -1,0 +1,17 @@
+.PageNum {
+    display: inline-block;
+    padding: 5px 3px;
+    margin: 7px;
+    width: 30px;
+    height: auto;
+    border-radius: 3px;
+    color:#fff;
+    text-align: center;
+    background-color: rgb(74, 74, 236);
+    cursor: pointer;
+}
+
+.Green {
+    background-color: rgb(71, 199, 71);
+    cursor: default;
+}

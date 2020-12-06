@@ -1,0 +1,49 @@
+.Input {
+    display: flex;
+    align-items: center;
+    margin: 15px 10px;
+    font-size: 19px;
+}
+
+.Label {
+    margin-right: 5px
+}
+
+.InputElement, .SelectElement {
+    border-radius: 5px;
+    background-color: rgb(236, 235, 235);
+    border: none;
+}
+
+.InputElement{
+    width: 35px;
+    height: 20px;
+    padding: 10px 15px;
+    font-size: 17px;
+}
+
+.SelectElement{
+    width: 165px;
+    height: 40px;
+    padding: 10px 25px;
+    font-size: 13px;
+}
+
+.SelectElement:focus, .InputElement:focus {
+    outline: none;
+}
+
+@media screen and (max-width: 400px) {
+    .InputElement{
+        font-size: 15px;
+        width: 20px;
+        height: 20px;    
+    }
+    .Label {
+        font-size: 15px
+    }
+
+    .Input {
+        margin: 10px 5px;
+    }
+}

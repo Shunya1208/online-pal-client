@@ -1,0 +1,69 @@
+.UserBox {
+    border-radius: 10px;
+    background-color: #fff;
+    display: grid;
+    grid-template-columns: max-content 1fr;
+    grid-template-rows: repeat(3,min-content);
+    grid-row-gap: 7px;
+    grid-column-gap: 15px;
+    justify-items: center;
+    
+    font-size: 18px;
+    transition: all .3s;
+    padding: 40px 30px;
+    margin:15px;
+    color: #000;
+    text-decoration: none;
+    box-shadow: 0 1px 1px rgb(104, 103, 103);
+}
+
+.UserBox:hover {
+    transform: translateY(-5px);
+    background-color: rgb(231, 230, 230);
+}
+
+.UserInfoBox {
+    grid-column: 1 / 2;
+    grid-row: 2 / 3;
+}
+
+.Gender {
+    margin: 0 3px;
+}
+
+.CountryBox {
+    grid-column: 1 / 2;
+    grid-row: 3 / 4;
+}
+
+.Image{
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+}
+
+.UserBox p{
+    grid-column: 2 / -1;
+    grid-row: 1 / -1;
+    align-self: center;
+}
+
+
+@media screen and (max-width: 700px) {
+    .UserBox {
+        grid-template-columns: 70% ;
+        grid-template-rows: repeat(4,min-content) max-content;
+        justify-content: center;
+    }
+
+    .UserBox p{
+        grid-column: 1 / 2;
+        grid-row: 4 / -1;
+        text-align: center;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .UserBox {
+        grid-template-columns: 100% ;
+    }
+}

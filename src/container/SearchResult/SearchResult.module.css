@@ -1,0 +1,177 @@
+.SearchResult {
+    padding: 70px 50px;
+    background-color: rgb(248, 245, 245);
+}
+
+.container {
+    display: grid;
+    grid-auto-columns: 30% 60%;
+    justify-content: center;
+    grid-column-gap: 20px;
+}
+
+.Form {
+    grid-column: 1 / 2;
+    height: 450px;
+    border-radius: 10px;
+    padding: 30px;
+    background-color: #fff;
+    box-shadow: 0 1px 1px rgb(104, 103, 103);
+    position:sticky;
+    left:0;
+    top: 150px;
+}
+
+.Form h3 {
+    font-size: 25px;
+    text-transform: uppercase;
+    display: inline-block;
+    background: linear-gradient(to right , rgb(142, 142, 224),  rgb(74, 74, 236));
+    -webkit-background-clip: text;
+    color: transparent;
+    margin: 20px auto;
+}
+
+.UserPanel {
+    grid-column: 2 / 3;
+    display: flex;
+    flex-direction: column;
+}
+
+.PageContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+}
+
+.Page {
+    display: inline-block;
+}
+
+.PageLink {
+    display: inline-block;
+    padding: 5px 3px;
+    margin: 7px;
+    width: 30px;
+    height: auto;
+    border-radius: 3px;
+    color:#fff;
+    text-align: center;
+    background-color: rgb(74, 74, 236);
+    cursor: pointer;
+}
+
+.PageLink:focus {
+    outline: none;
+}
+
+.PageLinkActive {
+    background-color: rgb(71, 199, 71);
+    cursor: default;
+}
+
+.Button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    width: 100px;
+    height: 45px;
+    border-radius: 18px;
+    color: #fff;
+    background-color: rgb(74, 74, 236);
+    border: 1px solid transparent;
+    padding: 5px 10px;
+    margin: 10px;
+    transition: all .2s;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    box-sizing: border-box;
+}
+
+.Button:hover {
+    transform: translateY(-2px);
+}
+
+.Button:active {
+    transform: translateY(0);
+    outline:none;
+}
+
+.Button:focus {
+    outline: none;
+}
+
+.Disable {
+    background-color: grey;
+    cursor: default;
+}
+
+.Disable:hover {
+    transform: translateY(0);
+}
+
+.NoResults {
+    font-size: 25px;
+    text-align: center;
+}
+
+@media screen and (max-width: 1200px) {
+
+    .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .UserPanel {
+        width: 80%;
+    }
+
+    .Form {
+        position: relative;
+        top: 0;
+        order: 1;
+        margin: 20px 0;
+    }
+}
+
+@media screen and (max-width: 850px) {
+
+    .UserPanel {
+        width: 90%;        
+    }
+
+    .SearchResult {
+        padding: 70px 30px;
+    }
+}
+
+
+@media screen and (max-width: 700px) {
+    .Button {
+      display: none;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .UserPanel {
+        width: 100%;        
+    }
+
+    .SearchResult {
+        padding: 70px 0;
+    }
+
+    .PageLink {
+        margin: 7px 3px;
+    }
+
+    .Form {
+        width: 80%;
+        padding: 30px 15px;
+    }
+}
+

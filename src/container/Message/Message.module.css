@@ -1,0 +1,82 @@
+.Message {
+    width: 80%;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 1px 1px rgb(104, 103, 103);
+    padding: 20px 20px;
+    box-sizing: border-box;
+}
+
+.Header {
+    background-color: rgba(212, 212, 212, 0.212);
+    overflow-x: scroll;
+    width: 100%;
+    display: flex;
+    min-height: 120px;
+    border-radius: 5px 5px 0 0;
+}
+
+.Body {
+    background-color: rgb(86, 86, 247);
+    padding: 10px 20px;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    align-content: flex-start;
+    overflow-y: scroll;
+    border: 1px solid rgb(167, 167, 167);
+    border-radius: 0 0 5px 5px ;
+}
+
+.Footer {
+    width: 100%;
+    margin: 10px;
+    position: relative;
+}
+
+.Input {
+    width: 90%;
+    height: 30px;
+    background-color: rgb(236, 235, 235);
+    border:none;
+    border-radius: 10px;
+    padding: 10px 15px;
+    font-size: 17px;
+}
+
+.Input::placeholder {
+    color: rgb(189, 187, 187);
+}
+
+.Input:focus {
+    outline: none;
+}
+
+.Form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.Button {
+    outline: none;
+    border: none;
+    color: #000;
+    font-size: 30px;
+    background-color: #fff;
+    color: rgb(197, 197, 197);
+}
+
+.Valid {
+    color: rgb(86, 86, 247);
+    cursor: pointer;
+}
+
+@media screen and (max-width: 900px) {
+
+    .Message {
+        width: 100%;
+    }
+}
+
+

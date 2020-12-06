@@ -1,0 +1,65 @@
+.UserBox {
+    width: 100%;
+    height: 200px;
+    border-radius: 10px;
+    background-color: #fff;
+    font-size: 18px;
+    transition: all .3s;
+    padding: 20px 0;
+    color: #000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+}
+
+.UserBox:hover {
+    transform: translateY(-5px);
+    background-color: rgb(231, 230, 230);
+}
+
+.Link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    color: #000;
+}
+
+.Bookmark {
+    display: flex;
+    justify-content: center;
+    height: 200px;
+    position: relative;
+}
+
+.Bookmark:hover {
+    transform: translateY(0);
+}
+
+.Bookmark > ion-icon {
+    color: red;
+    font-size: 25px;
+    position:absolute;
+    right:10px;
+    top: 10px;
+    cursor: pointer;
+    display:none;
+    transition: all .3s
+}
+
+.Bookmark:hover > ion-icon {
+    display:block;
+}
+
+.Message {
+    
+}
+
+.NameBox{
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+

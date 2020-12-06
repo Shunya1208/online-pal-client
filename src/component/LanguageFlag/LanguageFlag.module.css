@@ -1,0 +1,26 @@
+.LanguageFlag {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: all .3s;
+    text-decoration: none;
+    color: #000;
+}
+
+.LanguageFlag:hover {
+    transform: translateY(-4px);
+}
+
+.LanguageFlag img {
+    width: 60%;
+    height: 150px;
+    border-radius: 50%;
+    border: 1px solid rgb(66, 66, 66);
+}
+
+.LanguageFlag div{
+    text-transform: uppercase;
+    font-size: 18px;
+    margin-top: 7px;
+}

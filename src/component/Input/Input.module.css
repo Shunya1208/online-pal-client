@@ -1,0 +1,94 @@
+.Input {
+    margin-bottom: 15px;
+}
+
+.Label {
+    display: block;
+    color: rgb(133, 132, 132);
+    margin-bottom: 5px;
+}
+
+.Element {
+    font-size: 14px;
+    padding: 10px 15px;
+    border-radius: 5px;
+    background-color: rgb(236, 235, 235);
+    border: none;
+    border-bottom: 1px solid transparent;
+    height: 20px;
+
+}
+
+.InputElement{
+    width: 80%;
+}
+
+.BirthElement {
+    width: 150px;
+}
+
+.GenderElement {
+    height: 50px;
+}
+
+.SelectElement {
+    width: 60%;
+    height: 50px;
+}
+
+.Textarea{
+    width: 80%;
+    height: 100px;
+}
+
+
+.Element:focus {
+    outline: none;
+}
+
+.Element::placeholder {
+    color: rgb(189, 187, 187);
+}
+
+.Invalid{
+    border: 1px solid red;
+}
+
+@media screen and (max-width: 500px) {
+
+    .Label {
+       font-size: 12px
+    }
+    
+    .InputElement{
+        font-size: 12px;
+        width: 70%;
+        height: 15px;
+        padding: 7px 12px;
+    }
+
+    .InputElement::placeholder {
+        font-size: 12px
+    }
+}
+
+@media screen and (max-width: 450px) {
+
+    .InputElement{
+        width: 90%;
+    }
+    
+    .BirthElement {
+        width: 90%;    }
+    
+    .GenderElement {
+        width: 50%;    }
+    
+    .SelectElement {
+        width: 90%
+    }
+    
+    .Textarea{
+        width: 90%;
+    }
+}

@@ -1,0 +1,52 @@
+.Button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    width: 100px;
+    height: 45px;
+    border-radius: 18px;
+    color: #000;
+    background-color: #fff;
+    border: none;
+    padding: 5px 10px;
+    margin-left: 10px;
+    transition: all .2s;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    box-sizing: border-box;
+}
+
+.Button:disabled {
+    background-color:grey!important;
+    cursor: not-allowed;
+}
+
+.Button:active {
+    transform: translateY(2px);
+}
+
+.Button:focus {
+    outline: none;
+}
+
+.Blue {
+    background-color: rgba(74, 74, 236);
+    color: #fff;
+}
+
+.Green {
+    background-color: rgb(71, 199, 71);
+    color: #fff;
+}
+
+.Bookmarked {
+    background-color: gray;
+    cursor: default;
+}
+
+.Bookmarked:hover {
+    transform: translateY(0);
+}
+

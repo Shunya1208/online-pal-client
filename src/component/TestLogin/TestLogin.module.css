@@ -1,0 +1,33 @@
+.Button {
+    width: 145px;
+    height: 60px;
+    text-align: center;
+    padding: 15px 25px;
+    margin: 0 20px;
+    border-radius: 8px;
+    border: none;
+    font-size: 17px;
+    cursor: pointer;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.Button:focus {
+    outline: none;
+}
+
+
+.Button:active {
+    transform: translateY(2px);
+}
+
+@media screen and (max-width: 500px) {
+
+    .Button {
+        width: 115px;
+        height: 40px;
+        padding: 15px 25px;
+        font-size: 12px;
+    }
+}

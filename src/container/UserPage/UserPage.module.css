@@ -1,0 +1,120 @@
+.Back {
+    display:flex;
+    align-items:center;
+    font-size: 25px;
+    color: rgb(74, 74, 236);
+    cursor: pointer;
+}
+
+.Container {
+    padding: 90px 130px;
+    padding-bottom: 50px;
+    font-size: 20px;
+}
+
+.Container img{
+    width: 200px;
+    height: auto;
+    border-radius: 50%;
+    border: 1px solid rgb(170, 170, 170);
+    
+}
+
+.InfoBox {
+    margin: 15px 0;
+}
+
+.Name {
+    font-size: 25px;
+}
+
+.Age {
+    font-size: 22px;
+}
+
+.Gender {
+    margin: 0 5px;
+}
+
+.ProfileContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.ButtonBox {
+    margin: 25px 0;
+    display: grid;
+    grid-template-columns: repeat(3, min-content);
+    grid-column-gap: 20px;
+    justify-content: center;
+}
+
+.LanguageBox {
+    margin-top: 20px;
+    margin-bottom: 10px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.Category{
+    font-size: 25px;
+    display: inline-block;
+    background: linear-gradient(to right , rgb(142, 142, 224),  rgb(74, 74, 236));
+    -webkit-background-clip: text;
+    color: transparent;
+    margin: 0;
+}
+
+.MapContainer {
+    width: 70%;
+    margin: 0 auto;
+    height: 400px;
+    border-radius: 8px;
+}
+
+.MapContainer:focus {
+    outline: none
+}
+
+.Icon {
+    font-size: 12px;
+}
+
+.IconText {
+    font-size: 13px;
+}
+
+
+
+@media screen and (max-width: 700px) {
+
+    .MapContainer {
+        width: 100%
+    }
+}
+
+@media screen and (max-width: 500px) {
+
+    .Container {
+        padding: 90px 50px;
+    }
+
+    .ButtonBox {
+        grid-column-gap: 5px;
+    }
+}
+
+@media screen and (max-width: 400px) {
+
+    .Container {
+        padding: 90px 20px;
+    }
+
+    .ButtonBox {
+        grid-column-gap: 0;
+    }
+}
