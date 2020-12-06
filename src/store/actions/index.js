@@ -12,7 +12,6 @@ export {
 export {
     auth,
     logout,
-    authCheckState,
     clearError,
     updateMe,
     clearEmail,

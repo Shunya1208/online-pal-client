@@ -125,7 +125,6 @@ class SearchResult extends Component {
         pageStart = (this.props.current-1)*this.props.pageDisplayNum + 1;
         pageLast=(this.props.current - 1)*this.props.pageDisplayNum + this.props.pageDisplayNum;
 
-
         if(this.props.users.length % this.props.pageDisplayNum !== 0 && this.props.current === this.props.pageSum) {
             pageLast = (this.props.pageSum-1)*this.props.pageDisplayNum + this.props.users.length  % this.props.pageDisplayNum
         }
@@ -143,7 +142,7 @@ class SearchResult extends Component {
                 })
             }
 
-        let userInfo =this.props.users.length ? this.props.users.slice((this.props.current -1)* this.props.pageDisplayNum , (this.props.current -1)* this.props.pageDisplayNum + this.props.pageDisplayNum).map(el => {
+        let userInfo =this.props.users.length ? this.props.users.slice(this.getPage().pageStart-1 , this.getPage().pageLast).map(el => {
             return (
                 <UserInfo key={el._id} info={el}/>
             )
@@ -153,8 +152,8 @@ class SearchResult extends Component {
                     <p>Showing {this.getPage().pageStart} - {this.getPage().pageLast} of {this.props.users.length}</p> : null;
 
         const style = classes.Button;
-        let prevStyle = style;
-        let nextStyle = style;
+        let prevStyle = classes.Button;
+        let nextStyle = classes.Button;
 
         if(this.props.current === 1 ) {
             prevStyle = [classes.Disable,style].join(" ");
@@ -221,8 +220,7 @@ class SearchResult extends Component {
                         {userInfo}
                     </div>
                 </div>
-                {pagination}
-                    
+                {pagination}     
             </div>
             
         )

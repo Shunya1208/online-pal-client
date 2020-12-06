@@ -102,16 +102,17 @@ class Form extends Component {
             formData[formElementIdentifier] = this.state.inputForm[formElementIdentifier].value
         }
 
-        if(this.props.type === "Reset"){
-            this.props.onResetPassword(formData, this.props.token);
-        }
-
-        if(this.props.type === "Delete"){
-            this.props.onCancelMe(this.props.user._id);
-        }
-
-        if(this.props.type === "Change"){
-            formData["id"] = this.props.user._id
+        switch(this.props.type) {
+            case "Reset":
+                this.props.onResetPassword(formData, this.props.token);
+                break;
+            case "Delete":
+                this.props.onCancelMe(this.props.user._id);
+                break;
+            case "Change":
+                formData["id"] = this.props.user._id;
+                break;
+            default:
         }
 
         this.props.onAuth(formData, type);
@@ -161,7 +162,7 @@ class Form extends Component {
                 break;
 
             case "Send" :
-                formIsValid = updatedInputForm["email"].valid && formIsValid;
+                formIsValid = updatedInputForm["email"].valid;
                 break;
 
             case "Reset":
@@ -191,15 +192,13 @@ class Form extends Component {
     }
 
     render () {
-        let text;
         let formElementsArray = [];
-        let link;
         let style = [classes.Form];
-        let sentence;
+        let errorMessage,title,link,sentence,authRedirect;
 
         switch(this.props.type) {
             case "Log In" :
-                text = "log into your account";
+                title = <h4>log into your account</h4>;
                 for(let key in this.state.inputForm) {
                     if(key === "email" || key ==="password"){
                     formElementsArray.push({
@@ -213,7 +212,7 @@ class Form extends Component {
                 break;
 
             case "Send" :
-                text = "Reset your password"
+                title = <h4>Reset your password</h4>
                 formElementsArray.push({
                     id: "email",
                     config: this.state.inputForm["email"]
@@ -221,7 +220,7 @@ class Form extends Component {
                 break;
 
             case "Reset":
-                text = "Reset your password"
+                title = <h4>Reset your password</h4>
                 for(let key in this.state.inputForm) {
                     if( key === "password" ||  key === "confirm")
                     formElementsArray.push({
@@ -232,7 +231,7 @@ class Form extends Component {
                 break;
             
             case "Change":
-                text = "Change your password"
+                title = <h4>Change your password"</h4>
                 style.push(classes.ChangeForm)
                 for(let key in this.state.inputForm) {
                     if( key === "password" ||  key === "confirm" || key === "current"){
@@ -245,13 +244,13 @@ class Form extends Component {
                 break;
             
             case "Delete":
-                text = "Delete your account"
+                title = <h4>Delete your account</h4>
                 style.push(classes.ChangeForm)
                 sentence = <p className={classes.Sentence}>Your account will be scheduled for deletion from the server</p>
                 break;
 
             default:
-                text = "create your account";
+                title = <h4>create your account</h4>;
 
                 for(let key in this.state.inputForm) {
                     if( key === "current")
@@ -264,7 +263,6 @@ class Form extends Component {
                 break;  
         }
 
-        let title = <h4>{text}</h4>
 
         let form = (
             <Aux>
@@ -302,12 +300,10 @@ class Form extends Component {
             )
         }
         
-        let errorMessage;
         if(this.props.error) {
             errorMessage = <ErrorMessage/>;
         }
 
-        let authRedirect;
         if (this.props.isAuthenticated && this.props.type !== "Change" && this.props.type !== "Delete") {
             authRedirect = <Redirect to="/"/>
         }

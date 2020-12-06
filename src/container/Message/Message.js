@@ -3,7 +3,6 @@ import { connect } from "react-redux";
 import * as actions from "../../store/actions/index";
 import classes from "./Message.module.css";
 import Room from "../../component/Room/Room";
-import Aux from "../../hoc/Aux/Aux";
 import OneMessage from "../../component/OneMessage/OneMessage";
 import Pusher from "pusher-js";
 import Spinner from "../../component/UI/Spinner/Spinner";
@@ -27,8 +26,6 @@ class Message extends Component {
         this.channelMessage = this.pusher.subscribe('messages');
         this.channelMessage.bind('inserted', (data) => {
             this.props.onAddMessage(data)
-            
-
         });
     }
 
@@ -54,7 +51,7 @@ class Message extends Component {
         }
     }
 
-    getMessageHandler = (evnet,roomId) => {
+    getMessageHandler = (event,roomId) => {
         // get messages using id
         this.props.onSelectRoom(roomId);
         this.props.onFetchMessages(roomId)
@@ -68,10 +65,9 @@ class Message extends Component {
 
     scrollToBottom = () => {
         this.messagesEnd.scrollIntoView({ behavior: "smooth" });
-      }
+    }
 
     render () {
-        console.log(this.props.rooms)
         let style =[classes.Button];
 
         if(this.state.value !== "" && this.props.selectedRoom) {
@@ -83,13 +79,10 @@ class Message extends Component {
         this.props.rooms.forEach(room => {
             room.participants.forEach(participant => {
                 if(participant._id !== this.props.user._id) {
-                    console.log(participant)
-                    console.log("a")
                     participantArray.push(participant)
                 }
             })
         })
-        console.log(participantArray)
 
 
         let room = participantArray.map((participant,i) => {
@@ -112,7 +105,6 @@ class Message extends Component {
         message = <Spinner/>
 
         return (
-            <Aux>
                 <div className={classes.Message}>
                     <div className={classes.Header}>
                         {room}
@@ -130,7 +122,6 @@ class Message extends Component {
                         </form>
                     </div>
                 </div>
-            </Aux>
         )
     }
 } 

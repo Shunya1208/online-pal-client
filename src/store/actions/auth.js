@@ -125,7 +125,7 @@ export const resetPassword = (data, token) => {
 
         axios.patch(`resetPassword/${token}`, data)
             .then( response => {
-                dispatch(authSuccess(null,response.data.data.user,false));
+                dispatch(authSuccess(null,response.data.data.user,true));
             })
             .catch( err => {
                 dispatch(authFail(err.response.data.message));
@@ -182,69 +182,58 @@ export const auth = (data, type) => {
     return dispatch => {
         dispatch(authStart())
        
-        if(type === "Sign Up") {
-            axios.post("signup", data)
-            .then( response => {
-                dispatch(sendEmail());
-            })
-            .catch( err => {
-                dispatch(authFail(err.response.data.message));
-            })
-        } else if(type === "Send") {
-            axios.post(`forgotPassword`,data)
-            .then( response => {
-                dispatch(sendEmail());
-            })
-            .catch( err => {
-                dispatch(authFail(err.response.data.message));
-            })
-        }else if(type === "Verify") {
-            axios.patch(`validUser/${data.token}`)
-            .then( response => {
-                dispatch(authSuccess(response.data.token,response.data.data.user,false));
-                //dispatch(checkAuthTimeout(response.data.expiresIn))
-            })
-            .catch( err => {
-                dispatch(authFail(err.response.data.message));
-            })
-        } else if(type==="Log In") {
-            axios.post("login", {email:data.email,password:data.password})
-            .then( response => {
-                dispatch(authSuccess(response.data.token, response.data.data.user,false));
-                //dispatch(checkAuthTimeout(response.data.expiresIn))
-            })
-            .catch( err => {
-                console.log(err)
-                dispatch(authFail(err.response.data.message));
-            })
-        } else if(type==="Change") {
-            axios.patch(`updateMyPassword/${data.id}`, {passwordCurrent:data.current,password:data.password})
-            .then( response => {
-                dispatch(authSuccess(response.data.token, response.data.data.user,true));
-                //dispatch(checkAuthTimeout(response.data.expiresIn))
-            })
-            .catch( err => {
-                dispatch(authFail(err.response.data.message));
-            })
+        switch (type) {
+            case "Sign Up":
+                axios.post("signup", data)
+                .then( response => {
+                    dispatch(sendEmail());
+                })
+                .catch( err => {
+                    dispatch(authFail(err.response.data.message));
+                })
+                break;
+
+            case "Send":
+                axios.post(`forgotPassword`,data)
+                .then( response => {
+                    dispatch(sendEmail());
+                })
+                .catch( err => {
+                    dispatch(authFail(err.response.data.message));
+                })
+                break;
+            case "Verify":
+                axios.patch(`validUser/${data.token}`)
+                .then( response => {
+                    dispatch(authSuccess(response.data.token,response.data.data.user,false));
+                    //dispatch(checkAuthTimeout(response.data.expiresIn))
+                })
+                .catch( err => {
+                    dispatch(authFail(err.response.data.message));
+                })
+                break;
+            case "Log In":
+                axios.post("login", {email:data.email,password:data.password})
+                .then( response => {
+                    dispatch(authSuccess(response.data.token, response.data.data.user,false));
+                    //dispatch(checkAuthTimeout(response.data.expiresIn))
+                })
+                .catch( err => {
+                    console.log(err)
+                    dispatch(authFail(err.response.data.message));
+                })
+                break;
+            case "Change":
+                axios.patch(`updateMyPassword/${data.id}`, {passwordCurrent:data.current,password:data.password})
+                .then( response => {
+                    dispatch(authSuccess(response.data.token, response.data.data.user,true));
+                    //dispatch(checkAuthTimeout(response.data.expiresIn))
+                })
+                .catch( err => {
+                    dispatch(authFail(err.response.data.message));
+                })
+                break;
+            default: 
         }
-       
     }
 };
-
-export const authCheckState = () => {
-    return dispatch => {
-        const token = localStorage.getItem("token");
-        if (!token) {
-            dispatch(logout());
-        } else {
-            const expirationDate = new Date(localStorage.getItem("expirationDate"));
-            if (expirationDate > new Date()){
-                const userId = localStorage.getItem("userId")
-                dispatch(authSuccess(token, userId,false));
-                dispatch(checkAuthTimeout((expirationDate.getTime() - new Date().getTime()) / 1000));
-            } else {
-                dispatch(logout())
-            }
-        }
-    }
-}

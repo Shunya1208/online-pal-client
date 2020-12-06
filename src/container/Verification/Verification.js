@@ -13,17 +13,16 @@ class Verification extends Component {
     }
     
     render () {
-        let loading;
+        let loading,authRedirect,errorMessage;
+
         if(this.props.loading){
             loading = <Spinner />
         }
 
-        let authRedirect;
         if (this.props.isAuthenticated) {
             authRedirect = <Redirect to="/"/>
         }
 
-        let errorMessage;
         if(this.props.error) {
             errorMessage = <ErrorMessage/>
         }

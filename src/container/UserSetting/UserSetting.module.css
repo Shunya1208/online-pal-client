@@ -18,9 +18,6 @@
     padding: 10px 30px;
     width: 70%;
     box-sizing: border-box;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
 }
 
 .List {

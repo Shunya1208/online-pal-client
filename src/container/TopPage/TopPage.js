@@ -74,8 +74,8 @@ class TopPage extends Component {
         ]
     }
 
+    
     componentDidMount() {
-
         this.props.onInitializeInput(
             {
                 minAge: 16,
@@ -107,10 +107,9 @@ class TopPage extends Component {
                 return obj;
             })
             // Update current position
-            const updatedPosition = {...updatedElement["currentPosition"]};
-            updatedPosition["latitude"] = position.coords.latitude;
-            updatedPosition["longitude"] = position.coords.longitude;
+            const updatedPosition = {latitude:position.coords.latitude,longitude:position.coords.longitude};
             this.props.onUpdateLocation(updatedPosition)
+            if(this.mounted)
             this.setState({countries:updatedDistances});
         }
 
@@ -120,7 +119,9 @@ class TopPage extends Component {
         }
     }
 
-    
+    componentWillUnmount(){
+        this.mounted = false;
+      }
 
     inputChangeHandler = (event,id) => {
         let value = event.target.value * 1;
@@ -175,12 +176,13 @@ class TopPage extends Component {
         },this.props.pageDisplayNum);
     }
 
-    testLoginHandler = (event,formData,type) => {
+    testLoginHandler = (formData) => {
         this.props.onAuth(formData, "Log In");
     }
 
     render () {
         let formElementsArray = [];
+        this.mounted = true;
 
         for(let key in this.state.searchForm) {
             if(key !== "countries" && key!== "languages")
@@ -200,7 +202,7 @@ class TopPage extends Component {
                 <section className={classes.Header}>
                     <h1>Find your international friends</h1>
                     <div className={classes.ButtonBox}>
-                        {this.props.isAuthenticated ? null : <TestLogin click={(event) => this.testLoginHandler(event,{email:"test1@test1.com",password:"test1test1"},"test1")}>{content}</TestLogin>}
+                        {this.props.isAuthenticated ? null : <TestLogin click={() => this.testLoginHandler({email:"test1@test1.com",password:"test1test1"})}>{content}</TestLogin>}
                     </div>
                 </section>
                 <section className={classes.QuickSearch}>
@@ -213,7 +215,7 @@ class TopPage extends Component {
                         />
                 </section>
                 <section className={classes.LocationSearch}>
-                    <LocationSearch countries={this.state.countries} currentPosition={this.state.currentPosition} click={(event,country) => this.clickLocationChangeHandler(event,country)}/>
+                    <LocationSearch countries={this.state.countries} click={(event,country) => this.clickLocationChangeHandler(event,country)}/>
                 </section>
                 <section className={classes.languageSearch}>
                     <LanguageSearch click={(event,language) => this.clickLanguageChangeHandler(event,language)}/>

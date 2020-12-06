@@ -3,7 +3,7 @@
     background-color: #fff;
     border-radius: 10px;
     box-shadow: 0 1px 1px rgb(104, 103, 103);
-    padding: 20px 20px;
+    padding: 20px;
     box-sizing: border-box;
 }
 
@@ -61,7 +61,6 @@
 .Button {
     outline: none;
     border: none;
-    color: #000;
     font-size: 30px;
     background-color: #fff;
     color: rgb(197, 197, 197);

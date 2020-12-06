@@ -1244,13 +1244,7 @@ export const updateObject = (oldObject, updatedProperties) => {
 
 
 export const ageCalculater = (birth) => {
-    const string = birth.toString();
-    const array = []
-    array.push(`${string[0]}${string[1]}${string[2]}${string[3]}`);
-    array.push(`${string[4]}${string[5]}`);
-    array.push(`${string[6]}${string[7]}`);
-
-    return getAge(array.join("-"))
+    return getAge(getAgeString(birth))
 }
 
 export const getAgeString = (birth) => {
@@ -1264,7 +1258,7 @@ export const getAgeString = (birth) => {
 }
 
 export const getDate = (age,type) => {
-    const Year= type==="max"? new Date().getFullYear()-age-1 : new Date().getFullYear()-age; 
+    const Year= type === "max"? new Date().getFullYear()-age-1 : new Date().getFullYear()-age; 
     const Month=("0"+(new Date().getMonth() + 1)).slice(-2);  
     const Day=("0"+new Date().getDate()).slice(-2);
     const birthString =`${Year}${Month}${Day}`
