@@ -12,7 +12,7 @@ class UserSmallInfo extends Component {
     render () {
        let userInfo = (
         <Link className={classes.UserBox} to="/user" onClick={(event) => this.props.click(event,this.props.info)}>
-            <User url={`https://online-pal1208.herokuapp.com/users/${this.props.info.photo}`} name={this.props.info.name}/>
+            <User url={`https://online-pal1208.herokuapp.com/img/users/${this.props.info.photo}`} name={this.props.info.name}/>
             <div className={classes.NameBox}>
                 {this.props.info.name}
                 <Gender sex={this.props.info.gender}/>
