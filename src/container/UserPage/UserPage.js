@@ -14,6 +14,8 @@ import * as actions from "../../store/actions/index";
 import { withRouter } from 'react-router';
 import Pusher from "pusher-js";
 import { Redirect } from "react-router-dom";
+import Scroll from "react-scroll";
+
 
 class UserPage extends Component {
     state = {
@@ -21,6 +23,8 @@ class UserPage extends Component {
         distance: null
 }
     componentDidMount() {
+        const scroll = Scroll.animateScroll;
+        scroll.scrollToTop({duration: 1});
 
         // calculate longitude and latitude of selected user
         const {long,lat} = getCountryPosition(convertCountryName(this.props.selectedUser.country));
