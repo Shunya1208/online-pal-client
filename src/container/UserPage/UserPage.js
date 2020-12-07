@@ -24,7 +24,6 @@ class UserPage extends Component {
 }
     componentDidMount() {
         const scroll = Scroll.animateScroll;
-        scroll.scrollToTop({duration: 1});
 
         // calculate longitude and latitude of selected user
         const {long,lat} = getCountryPosition(convertCountryName(this.props.selectedUser.country));
@@ -74,6 +73,7 @@ class UserPage extends Component {
                 }).then( () =>  this.props.history.push('/setting/message'))
                
         });
+        scroll.scrollToTop({duration: 1});
     }
 
     componentWillUnmount() {
