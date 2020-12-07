@@ -126,7 +126,7 @@ class UserPage extends Component {
                 {this.props.already ? <Redirect to="/setting/message"/> : null}
                 {backButton}
                 <div className={classes.ProfileContainer}>
-                    <img src={`https://lit-chamber-33999.herokuapp.com/img/users/${this.props.selectedUser.photo}`} alt={this.props.selectedUser.name}/>
+                    <img src={`https://online-pal1208.herokuapp.com/img/users/${this.props.selectedUser.photo}`} alt={this.props.selectedUser.name}/>
                     <div className={classes.InfoBox}>
                         <span className={classes.Name}>{this.props.selectedUser.name}</span>
                         <span className={classes.Gender}><Gender sex={this.props.selectedUser.gender}/></span>

@@ -57,7 +57,7 @@ class UserFormInfo extends Component {
             <div>
                 {message}
                 <div className={classes.User}>
-                    <User url={`https://lit-chamber-33999.herokuapp.com/img/users/${this.props.user.photo}`} name={this.props.user.name}/>
+                    <User url={`https://online-pal1208.herokuapp.com/img/users/${this.props.user.photo}`} name={this.props.user.name}/>
                     <div>{this.props.user.name}</div>
                 </div>
                 <form onSubmit={this.props.submit}>

@@ -38,7 +38,7 @@ class SideDrawer extends Component {
     let user = null;
 
     if (this.props.isAuthenticated) {
-        user = <User type="link" path="/setting/info" url={`https://lit-chamber-33999.herokuapp.com/img/users/${this.props.user.photo}`} close={this.props.close}/>
+        user = <User type="link" path="/setting/info" url={`https://online-pal1208.herokuapp.com/img/users/${this.props.user.photo}`} close={this.props.close}/>
         attachedTitleClasses = [classes.TitleBox, classes.User]
         navItems = (
             <Aux>

@@ -23,7 +23,7 @@ class UserInfo extends Component {
     render () {
         return (
             <Link className={classes.UserBox} to="/user" onClick={() => this.props.onUpdateSelectedUser(this.props.info)}>
-                <User className={classes.Image} url={`https://lit-chamber-33999.herokuapp.com/img/users/${this.props.info.photo}`} name={this.props.info.name}/>
+                <User className={classes.Image} url={`https://online-pal1208.herokuapp.com/img/users/${this.props.info.photo}`} name={this.props.info.name}/>
                 <div className={classes.UserInfoBox}>
                     {this.props.info.name}
                     <span className={classes.Gender}><Gender sex={this.props.info.gender}/></span>
