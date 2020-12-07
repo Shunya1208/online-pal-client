@@ -9,7 +9,6 @@ import Gender from "../Gender/Gender";
 import LanguageList from "../LanguageList/LanguageList";
 import {ageCalculater} from "../../shared/utility";
 import {connect} from "react-redux";
-import H3 from "../Text/H3/H3";
 import Aux from "../../hoc/Aux/Aux";
 import Scroll from "react-scroll";
 
@@ -53,7 +52,6 @@ class MyPage extends Component {
 
         return (
             <Aux>
-                <H3>Your profile</H3>
                 <div className={classes.Container}>
                     <div className={classes.ProfileContainer}>
                         <img src={`https://online-pal1208.herokuapp.com/img/users/${this.props.user.photo}`} alt={this.props.user.name}/>
