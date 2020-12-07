@@ -23,6 +23,7 @@ class Layout extends Component {
         this.props.onLogout();
         this.props.onClearMessages();
         this.props.onClearRooms();
+        this.props.history.push('/')
     }
 
     render () {
