@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const instance = axios.create({
-    baseURL: "http://127.0.0.1:3000/api/v1/rooms"
+    baseURL: "https://lit-chamber-33999.herokuapp.com/api/v1/rooms"
 })
 
 export default instance;

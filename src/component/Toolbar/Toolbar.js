@@ -29,7 +29,7 @@ class Toolbar extends Component {
         // Display logout button and user in the state of authentication
         if(this.props.isAuthenticated) {
             buttons = <Button content="logout" click={this.props.logout}>Log Out</Button>
-            user = <User type="link" url={`http://127.0.0.1:3000/img/users/${this.props.user.photo}`} name={this.props.user.name} path="/setting/info"/>
+            user = <User type="link" url={`https://lit-chamber-33999.herokuapp.com/img/users/${this.props.user.photo}`} name={this.props.user.name} path="/setting/info"/>
         }
 
         return(

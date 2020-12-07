@@ -49,7 +49,7 @@ class MyPage extends Component {
                 <H3>Your profile</H3>
                 <div className={classes.Container}>
                     <div className={classes.ProfileContainer}>
-                        <img src={`http://127.0.0.1:3000/img/users/${this.props.user.photo}`} alt={this.props.user.name}/>
+                        <img src={`https://lit-chamber-33999.herokuapp.com/img/users/${this.props.user.photo}`} alt={this.props.user.name}/>
                         <div className={classes.InfoBox}>
                             <span className={classes.Name}>{this.props.user.name}</span>
                             <span className={classes.Gender}><Gender sex={this.props.user.gender}/></span>

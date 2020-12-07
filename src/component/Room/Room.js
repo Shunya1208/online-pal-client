@@ -14,7 +14,7 @@ class Room extends Component {
 
         return (
             <div className={style.join(" ")} onClick={(event) => this.props.getMessage(event)}>
-                <img className={classes.Image} src={`http://127.0.0.1:3000/img/users/${this.props.info.photo}`} alt={this.props.info.name} />
+                <img className={classes.Image} src={`https://lit-chamber-33999.herokuapp.com/img/users/${this.props.info.photo}`} alt={this.props.info.name} />
                 <div className={classes.NameBox}>
                     {this.props.info.name}
                     <div className={classes.Button}>
