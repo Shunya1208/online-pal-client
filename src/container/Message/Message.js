@@ -16,6 +16,7 @@ class Message extends Component {
     }
 
     componentDidMount() {
+        this.props.onClearAlready()
         this.props.onFetchRooms(this.props.user._id);
         
 
@@ -146,7 +147,8 @@ const mapDispatchToProps =  dispatch => {
         onAddMessage: (obj) => dispatch(actions.addMessage(obj)),
         onDeleteMessages: (id) => dispatch(actions.deleteMessages(id)),
         onSelectRoom: (roomId) => dispatch(actions.selectRoom(roomId)),
-        onUpdateRoomDate: (roomId) => dispatch(actions.updateRoomDate(roomId))
+        onUpdateRoomDate: (roomId) => dispatch(actions.updateRoomDate(roomId)),
+        onClearAlready: () => dispatch(actions.clearAlready()),
     }
 }
 

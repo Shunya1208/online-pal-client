@@ -32,6 +32,9 @@ const Button = (props) => {
         case "bookmark":
                 button = <button className={style.join(" ")}  disabled={props.disabled} onClick={props.bookmark}>{props.loading ? <ButtonSpinner/> : props.children}</button>;
                 break;
+        case "message":
+                button = <button className={style.join(" ")}  disabled={props.disabled} onClick={props.click}>{props.roomLoading ? <ButtonSpinner/> : props.children}</button>;
+                break;
         default:
                 button = <button className={style.join(" ")} disabled={props.disabled} onClick={props.click}>{props.children}</button>;
     }
@@ -49,7 +52,8 @@ const mapDispatchToprops = dispatch => {
 
 const mapStateToProps = state => {
     return {
-        loading: state.auth.loading
+        loading: state.auth.loading,
+        roomLoading: state.room.loading
     }
 }
 

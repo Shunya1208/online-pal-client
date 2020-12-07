@@ -15,10 +15,10 @@ export const roomSuccess = (room) => {
     }
 };
 
-export const createSuccess = (room) => {
+export const createSuccess = (already) => {
     return {
         type: actionTypes.ROOM_CREATE_SUCCESS,
-        room
+        already
     }
 };
 
@@ -40,6 +40,12 @@ export const clearRoomError = () => {
     }
 };
 
+export const clearAlready = () => {
+    return {
+        type: actionTypes.CLEAR_ROOM_ALREADY
+    }
+};
+
 export const roomFail = (error) => {
     return {
         type: actionTypes.ROOM_FAIL,
@@ -55,10 +61,12 @@ export const createRoom = (id,myId) => {
 
         axios.post(`/`, {participants:[id,myId]})
             .then( response => {
-                dispatch(createSuccess());
+                if(response.data.data.already) {
+                    dispatch(updateRoomDate(response.data.data.room._id));
+                }
+                dispatch(createSuccess(response.data.data.already));
             })
             .catch( err => {
-                console.log(err.response.data.message)
                 dispatch(roomFail(err.response.data.message));
             })
         }
@@ -74,7 +82,6 @@ export const fetchRooms = (myId) => {
                     dispatch(roomSuccess(response.data.data.data.length ? response.data.data.data : []));    
             })
             .catch( err => {
-                console.log(err)
                 dispatch(roomFail(err.response.data.message));
             })
         }

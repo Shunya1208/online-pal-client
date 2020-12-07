@@ -13,14 +13,15 @@ import Aux from "../../hoc/Aux/Aux";
 import * as actions from "../../store/actions/index";
 import { withRouter } from 'react-router';
 import Pusher from "pusher-js";
+import { Redirect } from "react-router-dom";
 
 class UserPage extends Component {
     state = {
         zoom: 0,
         distance: null
 }
-
     componentDidMount() {
+
         // calculate longitude and latitude of selected user
         const {long,lat} = getCountryPosition(convertCountryName(this.props.selectedUser.country));
         //calculate distance between two points
@@ -63,9 +64,11 @@ class UserPage extends Component {
         this.channelRoom.bind('inserted', (data) => {
                 data.participants =[];
                 data.participants.push(this.props.selectedUser)
-                data.participants.push(this.props.user)
-                this.props.onAddRoom(data)
-                this.props.history.push('/setting/message')
+                data.participants.push(this.props.user);
+                new Promise( (resolutionFunc,rejectionFunc) => {
+                    resolutionFunc(this.props.onAddRoom(data));
+                }).then( () =>  this.props.history.push('/setting/message'))
+               
         });
     }
 
@@ -84,7 +87,7 @@ class UserPage extends Component {
     }
 
     createRoomHandler = () => {
-        this.props.onCreateRoom(this.props.selectedUser._id,this.props.user._id)
+        this.props.onCreateRoom(this.props.selectedUser._id,this.props.user._id,this.props.history.goBack)
     }
 
     render () {
@@ -105,7 +108,7 @@ class UserPage extends Component {
         if(this.props.isAuthenticated) {
             button = (
                 <Aux>
-                    <Button type="blue" click={this.createRoomHandler}><ion-icon name="mail-outline" className={classes.Icon}></ion-icon>&nbsp;<span className={classes.IconText}>Message</span></Button>
+                    <Button type="blue" content="message" click={this.createRoomHandler}><ion-icon name="mail-outline" className={classes.Icon}></ion-icon>&nbsp;<span className={classes.IconText}>Message</span></Button>
                     {/* <Button type="blue"><ion-icon name="videocam-outline" className={classes.Icon}></ion-icon>&nbsp;<span className={classes.IconText}>Video</span></Button> */}
                     <Button type="blue" content="bookmark" bookmark={() => this.addBookmarkHandler(bookmarkCheck)} already={this.props.bookmark ? bookmarkCheck.includes(this.props.selectedUser._id) : false}>
                         <ion-icon name="bookmark-outline" className={classes.Icon}></ion-icon>&nbsp;
@@ -120,6 +123,7 @@ class UserPage extends Component {
 
         return (
             <div className={classes.Container}>
+                {this.props.already ? <Redirect to="/setting/message"/> : null}
                 {backButton}
                 <div className={classes.ProfileContainer}>
                     <img src={`http://127.0.0.1:3000/img/users/${this.props.selectedUser.photo}`} alt={this.props.selectedUser.name}/>
@@ -168,16 +172,17 @@ const mapStateToProps = state => {
         isAuthenticated: state.auth.token !== null,
         user: state.auth.user,
         bookmark: state.auth.bookmark,
-        error: state.room.error
+        error: state.room.error,
+        already: state.room.already
     };
 };
 
 const mapDispatchToProps = dispatch => {
     return {
         onAddBookmark: (id,myId) => dispatch(actions.addBookmark(id,myId)),
-        onCreateRoom: (id,myId) => dispatch(actions.createRoom(id,myId)),
+        onCreateRoom: (id,myId,ref) => dispatch(actions.createRoom(id,myId,ref)),
         onAddRoom : (obj) => dispatch(actions.addRoom(obj)),
-        onClearRoomError: () => dispatch(actions.clearRoomError())
+        onClearRoomError: () => dispatch(actions.clearRoomError()),
     }
 }
 

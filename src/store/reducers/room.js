@@ -6,6 +6,7 @@ const initialState = {
         selectedRoom: null,
         error: null,
         loading: false,
+        already: false
 };
 
 const roomStart = (state, action) => {
@@ -21,12 +22,6 @@ const roomSuccess = (state,action) => {
     })
 }
 
-const updateSuccess = (state,action) => {
-    return updateObject( state, {
-        error: null, 
-        loading: false
-    })
-}
 
 const addRoom = (state,action) => {
 
@@ -64,12 +59,26 @@ const clearError = (state, action) => {
     })
 };
 
+const clearAlready = (state, action) => {
+    return updateObject( state, {
+        already: false
+    })
+};
+
 const createSuccess = (state, action) => {
     return updateObject( state, {
         error: null,
-        loading: false
+        loading: false,
+        already: action.already
     })
 };
+
+const updateSuccess = (state,action) => {
+    return updateObject( state, {
+        error: null, 
+        loading: false
+    })
+}
 
 
 
@@ -84,6 +93,7 @@ const reducer = (state = initialState, action) => {
         case actionTypes.CLEAR_ROOMS: return clearRooms(state, action);
         case actionTypes.ROOM_UPDATE_SUCCESS: return updateSuccess(state, action);
         case actionTypes.CLEAR_ROOM_ERROR: return clearError(state, action);
+        case actionTypes.CLEAR_ROOM_ALREADY: return clearAlready(state, action);
         default: return state;
     }
 }

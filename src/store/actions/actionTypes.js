@@ -36,7 +36,8 @@ export const FETCH_ROOMS ="FETCH_ROOMS";
 export const ADD_ROOM = "ADD_ROOM"
 export const SELECT_ROOM = "SELECT_ROOM";
 export const CLEAR_ROOMS = "CLEAR_ROOMS";
-export const CLEAR_ROOM_ERROR = "CLEAR_ROOM_LOADER"
+export const CLEAR_ROOM_ERROR = "CLEAR_ROOM_LOADER";
+export const CLEAR_ROOM_ALREADY = "CLEAR_ROOM_ALREADY";
 
 export const MESSAGE_START = "MESSAGE_START";
 export const MESSAGE_SUCCESS = "MESSAGE_SUCCESS";

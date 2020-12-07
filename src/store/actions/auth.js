@@ -219,7 +219,6 @@ export const auth = (data, type) => {
                     //dispatch(checkAuthTimeout(response.data.expiresIn))
                 })
                 .catch( err => {
-                    console.log(err)
                     dispatch(authFail(err.response.data.message));
                 })
                 break;

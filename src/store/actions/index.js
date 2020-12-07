@@ -33,7 +33,8 @@ export {
     selectRoom,
     updateRoomDate,
     clearRooms,
-    clearRoomError
+    clearRoomError,
+    clearAlready
 } from "./room";
 
 export {
