@@ -73,6 +73,7 @@ class UserPage extends Component {
                 }).then( () =>  this.props.history.push('/setting/message'))
                
         });
+        
         scroll.scrollToTop({duration: 1});
     }
 

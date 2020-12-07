@@ -10,7 +10,9 @@ import LanguageList from "../LanguageList/LanguageList";
 import {ageCalculater} from "../../shared/utility";
 import {connect} from "react-redux";
 import H3 from "../Text/H3/H3";
-import Aux from "../../hoc/Aux/Aux"
+import Aux from "../../hoc/Aux/Aux";
+import Scroll from "react-scroll";
+
 
 class MyPage extends Component {
     state = {
@@ -18,6 +20,8 @@ class MyPage extends Component {
     }
 
     componentDidMount() {
+        const scroll = Scroll.animateScroll;
+
         // mapbox configuration
         const map = new mapboxgl.Map({
             container: this.mapContainer,
@@ -36,6 +40,9 @@ class MyPage extends Component {
                 .setHTML(`<h3>${this.props.user.country}</h3>`)
                 .addTo(map);
             }
+        
+        scroll.scrollToTop({duration: 1});
+
     }
 
 
