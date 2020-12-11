@@ -1,6 +1,6 @@
 # Online Pal 国際交流SNSアプリ
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+![Uploading スクリーンショット 2020-12-09 22.21.32.png…]()
 
 ## Available Scripts
 
