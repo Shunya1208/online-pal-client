@@ -1,22 +1,36 @@
 # Online Pal 国際交流SNSアプリ
+[running tests](https://online-pal1208.netlify.app/setting/account)
 
-
+※ページ内には「Guest Login （テストユーザーとしてワンクリックでログインができる機能）」も実装してあります。
 
 ## 開発目的
 ![Uploading スクリーンショット 2020-12-09 22.21.32.png…]()
 
 海外に出張や旅行をした際に、もっと「語学を勉強しておけばよかった」や「食事や観光が一緒にできる友達がいれば」と思うことがしばしばありました。
-　そのような思いから、語学力を上げたい方や外国の友達が欲しい方に気軽に使ってもらえるように開発しました。
+そのような思いから、語学力を上げたい方や外国の友達が欲しい方に気軽に使ってもらえるように開発しました。
 
-### `npm start`
+##　主な使い方
+　①ゲストログインまたはユーザー登録
+　画面中央の「Guest Login 」で簡単ログインを行うか、画面右上の「Sign Up 」ユーザー登録を行ってください。
+　既にアカウントをお持ちの方は、画面右上の「Log In」から登録を行ったユーザーでログイン可能です。
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+　②友達検索
+　トップページの「QUICK SEARCH FRIENDS」または「SEARCH FRIENDS BY LOCATION」、「SEARCH FRINEDS BY LANGUAGE」の項目から、それぞれ年齢別・性別、国別、言語別の友達検索が可能です。
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+　「QUICK SEARCH FRIENDS」の項目では、トップページ上で素早く友達候補が検索出来ます。より多くの検索結果の参照する場合は「View　More」をクリックしてください。
 
-### `npm test`
+　３つの項目を組み合わせて詳細検索をしたい場合は「SEARCH　FORM」から検索が可能です。
+
+　③リアルタイムメッセージ
+　友達のプロフィールページにある「Message」ボタンを押すことでチャットルームが作成され、マイページ上でメッセージを送ることが出来ます。
+
+　④お気に入り登録
+　友達のプロフィールページにある「Bookmark」ボタンを押すことでお気に入り登録が出来ます。
+
+　⑤マイページ
+　ユーザー情報の変更やメッセージ、お気に入り登録の確認などが可能です。
+
+## `npm test`
 
 Launches the test runner in the interactive watch mode.\
 See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
