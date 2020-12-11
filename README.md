@@ -1,5 +1,10 @@
 # Online Pal 国際交流SNSアプリ
-[running tests](https://online-pal1208.netlify.app/setting/account)
+[https://online-pal1208.netlify.app/setting/account](https://online-pal1208.netlify.app/setting/account)
+
+テストユーザーアカウント
+
+```メールアドレス：test2@test2.com
+パスワード：12341234```
 
 ※ページ内には「Guest Login （テストユーザーとしてワンクリックでログインができる機能）」も実装してあります。
 
@@ -10,6 +15,7 @@
 そのような思いから、語学力を上げたい方や外国の友達が欲しい方に気軽に使ってもらえるように開発しました。
 
 ##　主な使い方
+
 　①ゲストログインまたはユーザー登録
 　画面中央の「Guest Login 」で簡単ログインを行うか、画面右上の「Sign Up 」ユーザー登録を行ってください。
 　既にアカウントをお持ちの方は、画面右上の「Log In」から登録を行ったユーザーでログイン可能です。
@@ -30,57 +36,21 @@
 　⑤マイページ
 　ユーザー情報の変更やメッセージ、お気に入り登録の確認などが可能です。
 
-## `npm test`
+## 主な機能
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+　・ユーザー登録（メール認証）＆ログイン
+　・簡単ログイン
+　・プロフィール画像アップロード＆プロフィール情報の変更
+　・お気に入り登録
+　・検索機能
+　・リアルタイムメッセージ
+　・MapBoxによるユーザーの位置情報表示
+　・パスワード変更＆リセット
+　・アカウント削除
 
-### `npm run build`
+## 導入技術
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+　フロントエンド　HTML・CSS・JavaScript・React/Redux
+　バックエンド　Node.js・Express
+　データベース　MongoDB・Mongoose
+　インフラ　Heroku・Netlify
