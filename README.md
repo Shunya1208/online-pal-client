@@ -52,7 +52,7 @@
 * アカウント削除
 
 ## 導入技術
-*フロントエンド　HTML・CSS・JavaScript・React/Redux
-*バックエンド　Node.js・Express
-*データベース　MongoDB・Mongoose
-*インフラ　Heroku・Netlify
+* フロントエンド　HTML・CSS・JavaScript・React/Redux
+* バックエンド　Node.js・Express
+* データベース　MongoDB・Mongoose
+* インフラ　Heroku・Netlify
