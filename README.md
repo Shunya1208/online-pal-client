@@ -51,7 +51,14 @@
 * アカウント削除
 
 ## 導入技術
-* フロントエンド　HTML・CSS・JavaScript・React/Redux
-* バックエンド　Node.js・Express
-* データベース　MongoDB・Mongoose
-* インフラ　Heroku・Netlify
+* HTML5　
+* CSS3　
+* JavaScript　
+* React 17.0.1　
+* Redux 4.0.5
+* Node.js 14.15.1　
+* Express 4.17.1
+* MongoDB
+* Mongoose 5.10.15
+* Heroku
+* Netlify
