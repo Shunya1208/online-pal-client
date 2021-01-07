@@ -1,70 +1,79 @@
-# Getting Started with Create React App
+# Online Pal 国際交流SNSアプリ
+[https://online-pal1208.netlify.app/setting/account](https://online-pal1208.netlify.app/setting/account)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
 
-In the project directory, you can run:
+```
+テストユーザーアカウント
 
-### `npm start`
+メールアドレス：test2@test2.com
+パスワード：12341234
+```
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+※ページ内には「Guest Login （テストユーザーとしてワンクリックでログインができる機能）」も実装してあります。
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## 開発目的
+![top page](https://github.com/Shunya1208/images/blob/master/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88%202020-12-09%2022.21.32.png)
 
-### `npm test`
+海外に出張や旅行をした際に、もっと「語学を勉強しておけばよかった」や「食事や観光が一緒にできる友達がいれば」と思うことがしばしばありました。
+そのような思いから、語学力を向上させたい方や外国の友達が欲しい方に利用してもらえるように開発しました。
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## 主な使い方
+#### ゲストログインまたはユーザー登録
+画面中央の「Guest Login 」で簡単ログインを行うか、画面右上の「Sign Up 」からユーザー登録を行ってください。
+既にアカウントをお持ちの方は、画面右上の「Log In」からログイン可能です。
 
-### `npm run build`
+#### 友達検索
+トップページの「QUICK SEARCH FRIENDS」または「SEARCH FRIENDS BY LOCATION」、「SEARCH FRINEDS BY LANGUAGE」の項目から、それぞれ年齢別・性別、国別、言語別の友達検索が可能です。
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+「QUICK SEARCH FRIENDS」の項目では、トップページ上で素早く友達候補が検索出来ます。より多くの検索結果の参照する場合は「View　More」をクリックしてください。
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+より詳細に友達を検索をしたい場合は「SEARCH　FORM」から検索が可能です。
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+#### リアルタイムメッセージ
+友達のプロフィールページにある「Message」ボタンを押すことでチャットルームが作成され、マイページ上でメッセージを送ることが出来ます。
 
-### `npm run eject`
+#### お気に入り登録
+友達のプロフィールページにある「Bookmark」ボタンを押すことでお気に入り登録が出来ます。
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+#### マイページ
+ユーザー情報の変更やメッセージの送受信、お気に入り登録の確認などが可能です。
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## 主な機能
+* ユーザー登録（メール認証）＆ログイン
+* 簡単ログイン
+* プロフィール画像のアップロード＆プロフィール情報の変更
+* お気に入り登録
+* 検索機能
+* リアルタイムメッセージ
+* MapBoxによるユーザーの位置情報表示
+* パスワード変更＆リセット
+* アカウント削除
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## 導入技術
+* HTML5　
+* CSS3　
+* JavaScript　
+* React 17.0.1　
+* Redux 4.0.5
+* Node.js 14.15.1　
+* Express 4.17.1
+* MongoDB
+* Mongoose 5.10.15
+* Heroku
+* Netlify
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## 技術選定の基準
+今回作成したアプリはSNSアプリであるため、ユーザーの滞在時間が比較的長くなることを想定しました。そのため、ページ遷移のストレスをなくすため、フロント部分はReact.jsを採用しました。また、バックエンドは学習コストを下げるため、Node.jsを用いてAPIを作成しています。データベースに関してはフロントからデータベースまで同じ形式でデータのやりとりが出来るように、JSON形式のデータを扱うMongoDBを採用しています。
 
-## Learn More
+## 工夫した点
+* SNSサイトはデスクトップだけでなくスマートフォンなど様々な媒体からのアクセスが予想されるため、デザインが崩れないようレスポンシブ対応を行った。
+* ユーザー登録時のメールアクティベーションやパスワードリセットなど、実際にサービスとして運用された場合を想定し、必要な機能を取り入れた。
+* ボタンやフォームのインプットなど複数回使う要素に関しては再利用出来るようにコンポーネント化した。
+* 基本的なCRUD処理はコードを複数回書かないように関数化した。
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## 苦労した点
+* Reactライフサイクルの役割が多いため、どのライフサイクルをどういう場面で使うのか判断するのに苦労した。
+* 開発途中においてもデーターベースを修正したりすることが多く、最適なデータベースを設計するのに苦労した。
+* 他のタスク処理が中断しないように、時間を要する処理に対して非同期処理を行うのを意識づけるのに苦労した。
+* 直感的に操作できるUI/UXを作成するのに苦労した。
