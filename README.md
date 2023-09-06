@@ -1,17 +1,3 @@
-# Online Pal 国際交流SNSアプリ
-[https://online-pal1208.netlify.app/setting/account](https://online-pal1208.netlify.app/setting/account)
-
-
-
-```
-テストユーザーアカウント
-
-メールアドレス：test2@test2.com
-パスワード：12341234
-```
-
-※ページ内には「Guest Login （テストユーザーとしてワンクリックでログインができる機能）」も実装してあります。
-
 ## 開発目的
 ![top page](https://github.com/Shunya1208/images/blob/master/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88%202020-12-09%2022.21.32.png)
 
